@@ -12,11 +12,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatIconModule } from '@angular/material/icon'
+import { MatTableModule } from '@angular/material/table'
 
+//Components
 import { ClientinfoComponent } from './clientinfo/clientinfo.component';
 import { ClientlistComponent } from './clientlist/clientlist.component';
 import { ClientdetailComponent } from './clientdetail/clientdetail.component';
-import { OrderdetailComponent } from './orderdetail/orderdetail.component'
+import { OrderdetailComponent } from './orderdetail/orderdetail.component';
+import { ProducttableComponent } from './producttable/producttable.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { OrderdetailComponent } from './orderdetail/orderdetail.component'
     ClientinfoComponent,
     ClientlistComponent,
     ClientdetailComponent,
-    OrderdetailComponent
+    OrderdetailComponent,
+    ProducttableComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { OrderdetailComponent } from './orderdetail/orderdetail.component'
     MatToolbarModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
