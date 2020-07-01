@@ -39,7 +39,7 @@ export class ClientdetailComponent implements OnInit
         this.clientDetails.push(order)
       } //end if
     }) //end forEach
-  }
+  } //end setClientDetails
 
   private parseDateJson(dateJson: string): string
   {
