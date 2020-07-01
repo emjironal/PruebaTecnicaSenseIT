@@ -16,7 +16,7 @@ export class ClientdetailComponent implements OnInit
 {
   clientDetails: Order[] = []
 
-  constructor(@Inject(MAT_DIALOG_DATA) public client: Client, private orderService: OrderService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public client: Client) { }
 
   ngOnInit(): void
   {
