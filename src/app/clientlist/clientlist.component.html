@@ -1,12 +1,15 @@
-<mat-card role="region">
-    <mat-card-title>
+<div class="bg-gray">
+  <div>
+    <mat-toolbar color='primary' role="heading">
       <span>Lista de clientes</span>
-    </mat-card-title>
-    <mat-divider></mat-divider>
-    <mat-list role="list">
+    </mat-toolbar>
+  </div>
+  <div class="align-center">
+    <mat-list role="list" class="client-list">
       <div *ngFor='let client of clientList'>
         <app-clientinfo [client]='client'></app-clientinfo>
         <br>
       </div>
     </mat-list>
-  </mat-card>
+  </div>
+</div>
