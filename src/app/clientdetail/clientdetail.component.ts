@@ -20,11 +20,10 @@ export class ClientdetailComponent implements OnInit
 
   ngOnInit(): void {
     this.getOrders()
-    console.log(this.clientDetails);
     
   } //end ngOnInit
 
-  getOrders()
+  getOrders(): void
   {
     this.orderService.getJsonOrders().subscribe((data: JsonOrder) =>
     {
@@ -32,9 +31,17 @@ export class ClientdetailComponent implements OnInit
       {
         if(order.order.customerId == this.client.id)
         {
+          //Extracted from: https://stackoverflow.com/questions/22435212/angular-js-format-date-from-json-object
+          order.order.orderDate = this.parseDateJson(order.order.orderDate)
+          order.order.requiredDate = this.parseDateJson(order.order.requiredDate)
           this.clientDetails.push(order)
         } //end if
       }) //end forEach
     }) //end subscribe
   } //end getOrders
+
+  private parseDateJson(dateJson: string): string
+  {
+    return (new Date(parseInt(dateJson.substr(6)))).toDateString()
+  } //end parseDateJson
 }//end ClientdetailComponent

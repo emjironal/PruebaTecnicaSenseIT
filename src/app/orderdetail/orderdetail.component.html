@@ -10,8 +10,8 @@
     <mat-card-content>
         <h2>{{order.order.shipName}}</h2>
         <p>Dirección de entrega: {{order.order.shipAddress}}, {{order.order.shipCity}}, {{order.order.shipCountry}}</p>
-        <p>Fecha de entrega: {{order.order.requiredDate}}</p>
-        <p>Fecha de orden: {{order.order.orderDate}}</p>
+        <p>Fecha de entrega: {{order.order.requiredDate | date: "dd/MM/yyyy"}}</p>
+        <p>Fecha de orden: {{order.order.orderDate | date: "dd/MM/yyyy"}}</p>
         <app-producttable [product]='order.orderDetails'></app-producttable>
     </mat-card-content>
 </mat-card>

@@ -3,8 +3,8 @@ export interface OrderInfo
     id: number,
     customerId: string,
     employeeId: number,
-    orderDate: Date,
-    requiredDate: Date
+    orderDate: string,
+    requiredDate: string,
     shipVia: number,
     freight: number
     shipName: string,
