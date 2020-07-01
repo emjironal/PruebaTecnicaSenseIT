@@ -1,3 +1,5 @@
+import { Order } from './order';
+
 export interface Client
 {
     id: string,
@@ -9,5 +11,6 @@ export interface Client
     postalCode: number,
     country: string,
     phone: string,
-    fax: string
+    fax: string,
+    clientDetails: Order[]
 } //end Client

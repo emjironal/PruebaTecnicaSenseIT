@@ -18,31 +18,28 @@ export class ClientdetailComponent implements OnInit
 
   constructor(@Inject(MAT_DIALOG_DATA) public client: Client, private orderService: OrderService) { }
 
-  ngOnInit(): void {
-    this.getOrders()
-    
+  ngOnInit(): void
+  {
+    this.setClientDetails(this.client.clientDetails)
   } //end ngOnInit
 
-  getOrders(): void
+  setClientDetails(orderList: Order[]): void
   {
-    this.orderService.getJsonOrders().subscribe((data: JsonOrder) =>
+    orderList.forEach(order =>
     {
-      data.results.forEach(order =>
+      if(order.order.customerId == this.client.id)
       {
-        if(order.order.customerId == this.client.id)
+        //Extracted from: https://stackoverflow.com/questions/22435212/angular-js-format-date-from-json-object
+        order.order.orderDate = this.parseDateJson(order.order.orderDate)
+        order.order.requiredDate = this.parseDateJson(order.order.requiredDate)
+        if(order.order.shippedDate)
         {
-          //Extracted from: https://stackoverflow.com/questions/22435212/angular-js-format-date-from-json-object
-          order.order.orderDate = this.parseDateJson(order.order.orderDate)
-          order.order.requiredDate = this.parseDateJson(order.order.requiredDate)
-          if(order.order.shippedDate)
-          {
-            order.order.shippedDate = this.parseDateJson(order.order.shippedDate)
-          }
-          this.clientDetails.push(order)
-        } //end if
-      }) //end forEach
-    }) //end subscribe
-  } //end getOrders
+          order.order.shippedDate = this.parseDateJson(order.order.shippedDate)
+        }
+        this.clientDetails.push(order)
+      } //end if
+    }) //end forEach
+  }
 
   private parseDateJson(dateJson: string): string
   {

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { JsonClient } from '../interfaces/jsonclient';
 import { HttpClient } from '@angular/common/http';
+
+import { JsonClient } from '../interfaces/jsonclient';
+import { Client } from '../interfaces/client';
+
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,6 +11,7 @@ import { Observable } from 'rxjs';
 }) //end Injectable
 export class ClientService
 {
+  public clientList: Client[] = []
   private urlClients = 'http://northwind.netcore.io/query/customers.json'
   
   constructor(

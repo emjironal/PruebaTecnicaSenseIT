@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { JsonOrder } from '../interfaces/jsonorder';
-import { HttpClient } from '@angular/common/http';
+import { Order } from '../interfaces/order';
+
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,6 +11,7 @@ import { Observable } from 'rxjs';
 }) //end Injectable
 export class OrderService
 {
+  public orderList: Order[] = []
   private urlOrders = 'http://northwind.netcore.io/orders.json'
   
   constructor(
