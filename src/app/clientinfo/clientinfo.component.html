@@ -3,18 +3,18 @@
         <div mat-card-avatar>
             <mat-icon>account_circle</mat-icon>
         </div>
-        <mat-card-title>{{client.contactName}}</mat-card-title>
-        <mat-card-subtitle>Client: {{client.id}}</mat-card-subtitle>
+        <mat-card-title *ngIf='client.contactName'>{{client.contactName}}</mat-card-title>
+        <mat-card-subtitle *ngIf='client.id'>Client: {{client.id}}</mat-card-subtitle>
     </mat-card-header>
     <mat-divider></mat-divider>
     <br>
     <mat-card-content>
-        <p>Compañía: {{client.companyName}}</p>
-        <p>Puesto: {{client.contactTitle}}</p>
-        <p>Dirección: {{client.address}}, {{client.city}}, {{client.country}}</p>
-        <p>Código postal: {{client.postalCode}}</p>
-        <p>Teléfono: {{client.phone}}</p>
-        <p>Fax: {{client.fax}}</p>
+        <p *ngIf='client.companyName'>Compañía: {{client.companyName}}</p>
+        <p *ngIf='client.contactTitle'>Puesto: {{client.contactTitle}}</p>
+        <p *ngIf='client.address && client.city && client.country'>Dirección: {{client.address}}, {{client.city}}, {{client.country}}</p>
+        <p *ngIf='client.postalCode'>Código postal: {{client.postalCode}}</p>
+        <p *ngIf='client.phone'>Teléfono: {{client.phone}}</p>
+        <p *ngIf='client.fax'>Fax: {{client.fax}}</p>
     </mat-card-content>
     <mat-card-actions align="end">
         <button color="primary" mat-raised-button (click)="openClientDetailsDialog()">Ver órdenes</button>
