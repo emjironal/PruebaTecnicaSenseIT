@@ -15,6 +15,8 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatIconModule } from '@angular/material/icon'
 import { MatTableModule } from '@angular/material/table'
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatPaginatorModule } from '@angular/material/paginator'
+import { MatSortModule } from '@angular/material/sort'
 
 //Components
 import { ClientinfoComponent } from './clientinfo/clientinfo.component';
@@ -46,7 +48,9 @@ import { ProducttableComponent } from './producttable/producttable.component'
     MatDividerModule,
     MatIconModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule,
+    MatSortModule
   ], //end imports
   providers: [],
   bootstrap: [AppComponent],
