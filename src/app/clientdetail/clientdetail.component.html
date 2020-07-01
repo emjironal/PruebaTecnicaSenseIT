@@ -1,1 +1,12 @@
-<p>clientdetail works!</p>
+<h2 mat-dialog-title>{{client.id}}: {{client.contactName}}</h2>
+<mat-dialog-content>
+    <mat-list role="list">
+        <div *ngFor='let order of clientDetails'>
+            <app-orderdetail [order]='order'></app-orderdetail>
+            <br>
+        </div>
+    </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

@@ -4,7 +4,9 @@
     </mat-card-title>
     <mat-divider></mat-divider>
     <mat-list role="list">
-      <app-clientinfo></app-clientinfo>
-      <br>
+      <div *ngFor='let client of clientList'>
+        <app-clientinfo [client]='client'></app-clientinfo>
+        <br>
+      </div>
     </mat-list>
   </mat-card>
