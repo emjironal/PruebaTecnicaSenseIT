@@ -5,4 +5,4 @@ export interface Order
 {
     order: OrderInfo,
     orderDetails: Product[]
-}
+} //end Order

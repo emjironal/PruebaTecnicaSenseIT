@@ -12,6 +12,6 @@
         <p>Dirección de entrega: {{order.order.shipAddress}}, {{order.order.shipCity}}, {{order.order.shipCountry}}</p>
         <p>Fecha de entrega: {{order.order.requiredDate}}</p>
         <p>Fecha de orden: {{order.order.orderDate}}</p>
-        <app-producttable></app-producttable>
+        <app-producttable [dataSource]='order.orderDetails'></app-producttable>
     </mat-card-content>
 </mat-card>

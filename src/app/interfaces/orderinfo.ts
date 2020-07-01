@@ -12,4 +12,4 @@ export interface OrderInfo
     shipCity: string,
     shipPostalCode: string,
     shipCountry: string
-}
+} //end OrderInfo

@@ -5,7 +5,7 @@ import { Order } from '../interfaces/order';
   selector: 'app-orderdetail',
   templateUrl: './orderdetail.component.html',
   styleUrls: ['./orderdetail.component.css']
-})
+}) //end Component
 export class OrderdetailComponent implements OnInit
 {
   @Input() order: Order
@@ -14,5 +14,4 @@ export class OrderdetailComponent implements OnInit
 
   ngOnInit(): void {
   }
-
-}
+} //end OrderdetailComponent

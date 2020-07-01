@@ -4,4 +4,4 @@ export interface Product
     unitPrice: number,
     quantity: number,
     discount: number
-}
+} //end Product

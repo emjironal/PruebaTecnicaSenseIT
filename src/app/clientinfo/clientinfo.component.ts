@@ -9,7 +9,7 @@ import { ClientdetailComponent } from '../clientdetail/clientdetail.component';
   selector: 'app-clientinfo',
   templateUrl: './clientinfo.component.html',
   styleUrls: ['./clientinfo.component.css']
-})
+}) //end Component
 export class ClientinfoComponent implements OnInit
 {
   @Input() client: Client

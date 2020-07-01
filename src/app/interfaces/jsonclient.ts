@@ -6,4 +6,4 @@ export interface JsonClient
     total: number,
     results: Client[],
     meta: Object
-}
+} //end JsonClient

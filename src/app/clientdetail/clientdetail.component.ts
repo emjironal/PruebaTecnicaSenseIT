@@ -11,7 +11,7 @@ import { JsonOrder } from '../interfaces/jsonorder';
   selector: 'app-clientdetail',
   templateUrl: './clientdetail.component.html',
   styleUrls: ['./clientdetail.component.css']
-})
+}) //end Component
 export class ClientdetailComponent implements OnInit
 {
   clientDetails: Order[] = []

@@ -10,4 +10,4 @@ export interface Client
     country: string,
     phone: string,
     fax: string
-}
+} //end Client

@@ -5,9 +5,9 @@ import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
-})
-export class ClientService {
-
+}) //end Injectable
+export class ClientService
+{
   private urlClients = 'http://northwind.netcore.io/query/customers.json'
   
   constructor(
@@ -17,5 +17,5 @@ export class ClientService {
   getJsonClients(): Observable<JsonClient>
   {
     return this.httpClient.get<JsonClient>(this.urlClients, {responseType: 'json'})
-  }
-}
+  } //end JsonClients
+} //end ClientService
