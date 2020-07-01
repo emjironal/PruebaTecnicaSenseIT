@@ -70,10 +70,21 @@ export class ClientlistComponent implements OnInit
     {
       if(order.order.customerId == client.id)
       {
+        order.order.orderDate = this.parseDateJson(order.order.orderDate)
+        order.order.requiredDate = this.parseDateJson(order.order.requiredDate)
+        if(order.order.shippedDate)
+        {
+          order.order.shippedDate = this.parseDateJson(order.order.shippedDate)
+        } //end if
         details.push(order)
       } //end if
     }) //end forEach
     return details
   } //end getClientDetails
+
+  private parseDateJson(dateJson: string): string
+  {
+    return (new Date(parseInt(dateJson.substr(6)))).toDateString()
+  } //end parseDateJson
 
 } //end ClientlistComponent
