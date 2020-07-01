@@ -3,15 +3,18 @@
         <div mat-card-avatar>
             <mat-icon>list_alt</mat-icon>
         </div>
-        <mat-card-title>Orden: {{order.order.id}}</mat-card-title>
+        <mat-card-title *ngIf='order.order.id'>Orden: {{order.order.id}}</mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
     <br>
     <mat-card-content>
         <h2>{{order.order.shipName}}</h2>
-        <p>Dirección de entrega: {{order.order.shipAddress}}, {{order.order.shipCity}}, {{order.order.shipCountry}}</p>
-        <p>Fecha de orden: {{order.order.orderDate | date: "dd/MM/yyyy"}}</p>
-        <p>Fecha de entrega: {{order.order.requiredDate | date: "dd/MM/yyyy"}}</p>
+        <p *ngIf='order.order.shipRegion'>Región: {{order.order.shipRegion}}</p>
+        <p *ngIf='order.order.shipAddress && order.order.shipCity && order.order.shipCountry'>Dirección de entrega: {{order.order.shipAddress}}, {{order.order.shipCity}}, {{order.order.shipCountry}}</p>
+        <p *ngIf='order.order.shipPostalCode'>Código postal: {{order.order.shipPostalCode}}</p>
+        <p *ngIf='order.order.orderDate'>Fecha de orden: {{order.order.orderDate | date: "dd/MM/yyyy"}}</p>
+        <p *ngIf='order.order.requiredDate'>Fecha de entrega: {{order.order.requiredDate | date: "dd/MM/yyyy"}}</p>
+        <p *ngIf='order.order.shippedDate'>Fecha de salida: {{order.order.shippedDate | date: "dd/MM/yyyy"}}</p>
         <app-producttable [product]='order.orderDetails'></app-producttable>
     </mat-card-content>
 </mat-card>

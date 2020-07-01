@@ -34,6 +34,10 @@ export class ClientdetailComponent implements OnInit
           //Extracted from: https://stackoverflow.com/questions/22435212/angular-js-format-date-from-json-object
           order.order.orderDate = this.parseDateJson(order.order.orderDate)
           order.order.requiredDate = this.parseDateJson(order.order.requiredDate)
+          if(order.order.shippedDate)
+          {
+            order.order.shippedDate = this.parseDateJson(order.order.shippedDate)
+          }
           this.clientDetails.push(order)
         } //end if
       }) //end forEach

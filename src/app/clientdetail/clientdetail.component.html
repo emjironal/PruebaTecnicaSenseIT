@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>{{client.id}}: {{client.contactName}}</h2>
-<mat-dialog-content>
+<mat-dialog-content *ngIf='clientDetails.length != 0' class="bg-gray">
     <mat-list role="list">
         <div *ngFor='let order of clientDetails'>
             <app-orderdetail [order]='order'></app-orderdetail>
